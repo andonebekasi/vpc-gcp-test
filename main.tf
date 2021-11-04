@@ -1,5 +1,5 @@
 resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" {
-  name          = "VPC-subnetwork"
+  name          = "test-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
   region        = "asia-southeast2"
   network       = google_compute_network.custom-test.id
@@ -10,7 +10,7 @@ resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" 
 }
 
 resource "google_compute_network" "custom-test" {
-  name                    = "VPC-network"
+  name                    = "test-network"
   project = "poc-danamon-devsecops"
   auto_create_subnetworks = false
 }
